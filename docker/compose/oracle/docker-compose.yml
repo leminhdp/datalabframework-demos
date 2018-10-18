@@ -1,0 +1,17 @@
+version: '3.5'
+services:
+  oracle:
+    image: sath89/oracle-ee-11g
+    ports:
+      - 1521:1521
+      #- 8080:8080
+    volumes:
+      - /home/oracle/oradata:/opt/oracle/oradata # persistent oracle database data.
+    networks:
+     - datalabframework
+
+networks:
+  datalabframework:
+    name: datalabframework
+    driver: bridge
+    external: true
