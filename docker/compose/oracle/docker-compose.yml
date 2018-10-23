@@ -6,7 +6,7 @@ services:
       - 1521:1521
       #- 8080:8080
     volumes:
-      - /home/oracle/oradata:/opt/oracle/oradata # persistent oracle database data.
+      - ./data:/docker-entrypoint-initdb.d
     networks:
      - datalabframework
 
